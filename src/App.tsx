@@ -1,18 +1,21 @@
-import React, {useContext} from "react"
 import Card from './components/Card'
-import { Context } from './Context';
+import { useDashboardContext } from './Context';
 import './App.css'
 import openDataLogo from './assets/icon.svg'
 
 function App() {
   //move to Context.js file
-  const {items, setItems} = useContext(Context);
+  const {ministriesData} = useDashboardContext();
 
   const handler = () => {
     return null;
   }
 
   handler()
+
+  if(ministriesData.length === 0){
+    return;
+  }
 
   return (
     <>
@@ -23,7 +26,9 @@ function App() {
       </div>
       <h1>Open Data App</h1>
       <div>
-        <Card></Card>
+        {ministriesData.map((ministry, index) => (
+          <Card>{ministry}</Card>
+        ))}
       </div>
     </>
   )
