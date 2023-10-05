@@ -11,8 +11,19 @@ export const DashboardProvider = ({children}) => {
         setMinistriesData(ministryData)
     }, [])
 
+    function showSort(sortedData){
+        
+        setMinistriesData(sortedData)
+        console.log('ministriesdData', ministriesData)
+    }
+
+    const contextValue = {
+        ministriesData,
+        showSort
+    }
+
     return (
-        <Context.Provider value={{ministriesData}}>
+        <Context.Provider value={contextValue}>
             {children}
         </Context.Provider>
     )

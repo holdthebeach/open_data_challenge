@@ -46,8 +46,12 @@ To get a local copy up and running follow these simple example steps.
 	- [x] Install React using Vite
     - [x] Make Card Component
     - [x] Add Ministry Data to State
-    - [ ] Add ascending and descending sort functionality
-- [x] Add at least one test
+    - [ ] Add ascending and descending sort functionality (re-render is not getting triggered)
+- [ ] Figure out how function imports in vitest work for two commented out tests to pass
 - [ ] Add axe-core to automate accessibility testing
 - [ ] Add types/use Typescript
 - [ ] Add d3 graph to visually show comparison of ministries
+- [ ] Change sorting to dropdown element instead of buttons
+- [ ] Use SASS variables
+- [ ] Make responsive grid design
+- [ ] Either use ellipses for ministry names or set a fixed height for element
