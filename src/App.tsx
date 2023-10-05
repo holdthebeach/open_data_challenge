@@ -1,17 +1,19 @@
 import Card from './components/Card'
 import { useDashboardContext } from './Context';
-import './App.css'
+import './App.scss'
 import openDataLogo from './assets/icon.svg'
 
 function App() {
   //move to Context.js file
   const {ministriesData} = useDashboardContext();
 
-  const handler = () => {
-    return null;
-  }
+  const sortDescending = () => {
 
-  handler()
+    const ministries = ministriesData;
+    const sortedMinistries = ministries.sort((a,b) => (a.datasets - b.datasets))
+    
+    return sortedMinistries;
+  }
 
   if(ministriesData.length === 0){
     return;
@@ -25,9 +27,9 @@ function App() {
         </a>
       </div>
       <h1>Open Data App</h1>
-      <div>
+      <div className="grid">
         {ministriesData.map((ministry, index) => (
-          <Card>{ministry}</Card>
+          <Card key={index}>{ministry}</Card>
         ))}
       </div>
     </>

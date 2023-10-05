@@ -3,7 +3,6 @@ import ministryData from "./ministryData.json"
 
 //fix type later
 export const Context = React.createContext<any>(null);
-//console.table(ministryData)
 
 export const DashboardProvider = ({children}) => {
     const [ministriesData, setMinistriesData] = useState<any>([]);

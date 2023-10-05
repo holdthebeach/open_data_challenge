@@ -1,3 +1,5 @@
+import './Card.scss'
+
 const Card = (props) => {
     const {department, datasets} = props.children;
 
