@@ -9,7 +9,9 @@ function App() {
   const {ministriesData, showSort} = useDashboardContext();
 
   const sortDescending = () => {
-    const ministries = ministriesData;
+    //needed to make a copy of the ministries data because React uses the concept of immutabilty
+    //may not register the state update correctly without making a copy
+    const ministries = [...ministriesData];
     const sortedMinistries = ministries.sort((a,b) => (b.datasets - a.datasets))
     
     showSort(sortedMinistries)
@@ -17,7 +19,7 @@ function App() {
   }
 
   const sortAscending = () => {
-    const ministries = ministriesData;
+    const ministries = [...ministriesData];
     const sortedMinistries = ministries.sort((a,b) => (a.datasets - b.datasets))
     
     showSort(sortedMinistries)
